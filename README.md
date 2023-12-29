@@ -5,12 +5,8 @@ A new Flutter project.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+As part of my minor internship, I have worked on Android Studio and developed a project using Java and Flutter by using Dart.
 
-A few resources to get you started if this is your first Flutter project:
+Through this internship, I have gained a good knowledge on usage of Android Studio and how to develop the applications.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Also, any changes or modifications and additional requirements are welcomed, if you prefer to work with this project.
