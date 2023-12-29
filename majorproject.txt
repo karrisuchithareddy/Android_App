@@ -1,0 +1,120 @@
+import 'package:flutter/material.dart';
+// Uncomment lines 7 and 10 to view the visual layout at runtime.
+//import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+
+void main() {
+  //debugPaintSizeEnabled = true;
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    Widget titleSection = Container(
+      padding: const EdgeInsets.all(32.0),
+      child:  Row(
+        children: [
+           Expanded(
+            child:  Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: const Text(
+                    'Visvesvaraya Technological Museum',
+                    style:TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Text(
+                  'Banglore , India',
+                  style:TextStyle(
+                    color: Colors.grey[500],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Icon(
+            Icons.star,
+            color: Colors.red[500],
+          ),
+          const Text('41'),
+        ],
+      ),
+    );
+
+    Column buildButtonColumn(IconData icon, String label) {
+      Color color = Theme.of(context).primaryColor;
+
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, color: color),
+          Container(
+            margin: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 12.0,
+                fontWeight: FontWeight.w400,
+                color: color,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
+    Widget buttonSection = Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          buildButtonColumn(Icons.call, 'CALL'),
+          buildButtonColumn(Icons.near_me, 'ROUTE'),
+          buildButtonColumn(Icons.share, 'SHARE'),
+        ],
+      ),
+    );
+
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32.0),
+      child: const Text(
+        '''
+        Science and technology museums have the power to inspire and educate millions of visitors each year. As mediators between expert scientists and the general public, museums have the responsibility to provide informed and balanced exhibits. Ethics are embedded in museum decisions, from determining what objects to collect to what exhibits to mount and what to say about them. This discussion examines the long history of science and technology museums and raises some of the ethical questions museums face, particularly how an educational mission is defined by the competing tensions of representation, political influence, funding, and entertainment.
+        ''',
+        softWrap: true,
+      ),
+    );
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Major Project',
+      theme:ThemeData(
+        primarySwatch: Colors.yellow,
+      ),
+      home:  Scaffold(
+        appBar: AppBar(
+          title: const Text('Online Technological Museums'),
+        ),
+       body: Center(
+       child: Column(
+       children: <Widget>[
+          Image.network(
+              'https://picsum.photos/250?image=9',
+              //height: 400,
+         //width: 250
+    ),
+    titleSection,
+            buttonSection,
+            textSection,
+          ],
+        ),
+      ),
+    ),
+    );
+  }
+}
